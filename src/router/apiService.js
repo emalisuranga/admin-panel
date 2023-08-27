@@ -7,7 +7,6 @@ const apiUrl = 'https://d55h59rq7e.execute-api.ap-northeast-1.amazonaws.com/QA-S
 export const fetchItemById = async () => {
   try {
     const response = await axios.get(`${apiUrl}`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
