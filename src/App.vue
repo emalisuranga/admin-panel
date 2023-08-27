@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
- 
     <Sidebar />
     <Header />
     <Dashboard />
@@ -10,8 +9,8 @@
 
 <script setup>
   import { ref } from 'vue'
-  import Sidebar from '@/components/Sidebar.vue'
   import Header from '@/components/Header.vue'
+  import Sidebar from '@/components/Sidebar.vue'
   import Dashboard from '@/components/Dashboard.vue'
 
   const cards = ['Today', 'Yesterday']
