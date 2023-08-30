@@ -2,7 +2,8 @@
   <v-app id="inspire">
     <Sidebar />
     <Header />
-    <Dashboard />
+    <RouterView />
+    <!-- <Dashboard /> -->
     
   </v-app>
 </template>
@@ -12,6 +13,7 @@
   import Header from '@/components/Header.vue'
   import Sidebar from '@/components/Sidebar.vue'
   import Dashboard from '@/components/Dashboard.vue'
+  import { RouterLink, RouterView } from 'vue-router'
 
   const cards = ['Today', 'Yesterday']
 

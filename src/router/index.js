@@ -1,10 +1,19 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import Dashboard from '@/components/Dashboard.vue'
+import Candidate from '@/views/Candidate'
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    name: 'home',
+    component: Dashboard
+  },
+  {
+    path: '/candidate',
+    name: 'candidate',
+    component: Candidate
+  },
     // children: [
     //   {
     //     path: '',
@@ -15,7 +24,6 @@ const routes = [
     //     component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
     //   },
     // ],
-  },
 ]
 
 const router = createRouter({
