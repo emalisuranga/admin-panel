@@ -14,4 +14,3 @@ export const fetchItemById = async () => {
   }
 };
 
-// Add more API functions as needed

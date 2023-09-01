@@ -1,18 +1,3 @@
-<!-- <template>
-    <v-dialog v-model="dialog" persistent max-width="400px">
-      <v-card>
-        <v-card-title>
-          Dialog Box
-        </v-card-title>
-        <v-card-text>
-          Content of the dialog.
-        </v-card-text>
-        <v-card-actions>
-          <v-btn color="primary" @click="dialog = false">Close</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </template> -->
 <template>
     <div class="container">
         <v-dialog v-model="dialog" persistent max-width="600px">
@@ -51,18 +36,37 @@
 </template>
   
 <script>
+import { fetchRecruitmentById } from '@/services/ApiService';
+
 export default {
     data() {
         return {
             dialog: false
         };
     },
-    props: {
-        inputJson: {
-            type: Array,
-            required: true
-        }
+    mounted() {
+        // Fetch data from the API when the component is mounted
+    },
+    props: ['inputJson','dialogItem'],
+    // props: {
+    //     inputJson: {
+    //         type: Array,
+    //         required: true
+    //     },
+    //     dialogItem: {
+    //         type: Array,
+    //         required: true
+    //     },
+
+    // },
+    watch: {
+    item(newItem) {
+        console.log('dialogItem')
+      console.log('dialogItem:', newItem);
     }
+  },
+    methods: {
+    },
 };
 </script>
 
