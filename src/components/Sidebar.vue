@@ -42,7 +42,7 @@ export default {
       ],
       links: [
         { path: '/', label: 'Dashboard',icon: 'mdi-microsoft-windows'},
-        { path: '/dashboard', label: 'Facebook Job Seeker',icon: 'mdi-clipboard-list-outline'},
+        { path: '/candidate', label: 'Facebook Job Seeker',icon: 'mdi-clipboard-list-outline'},
         { path: '/', label: 'Business Process',icon: 'mdi-delete'},
         { path: '/', label: 'System Setting',icon: 'mdi-alert-octagon'},
         // Add more links as needed
