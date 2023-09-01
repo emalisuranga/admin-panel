@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'https://vi9b42paw5.execute-api.ap-northeast-1.amazonaws.com/QA';
+const apiUrl = 'https://vi9b42paw5.execute-api.ap-northeast-1.amazonaws.com/Stage';
 
 export const fetchRecruitmentProgress = async () => {
   try {
@@ -12,9 +12,15 @@ export const fetchRecruitmentProgress = async () => {
   }
 };
 
-export const fetchRecruitmentById = async () => {
+export const fetchRecruitmentById = async (dialogItem) => {
   try {
-    const response = await axios.get(`${apiUrl}/recruitmentiistsheetbyid`);
+    const response = await axios.get(`https://5zswm8i35h.execute-api.ap-northeast-1.amazonaws.com/QA/`,
+      {
+        params: {
+          cn_id: dialogItem.cn_id,
+          status: dialogItem.status
+        }
+      });
     return response.data;
   } catch (error) {
     console.error('Error fetching recruitment by ID:', error);
