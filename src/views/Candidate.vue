@@ -2,6 +2,12 @@
     <div class="admin-dashboard">
         <v-main>
             <v-container class="py-2 px-2" fluid>
+                <v-subheader class="d-flex justify-space-between align-center">
+        <h3>Dashboard</h3>
+        <v-btn class="rounded-lg" color="success" >
+            View candidate
+        </v-btn>
+      </v-subheader><br>
                 <v-data-table caption="test" v-model:sort-by="sortBy" :headers="headers" :items="items" class="elevation-1">
                     <template v-slot:item.status="{ item }">
                         <v-chip :color="getStatusColor(item.columns.status)" small>
@@ -98,6 +104,7 @@ export default {
             try {
                 const data = await fetchRecruitmentById(item.columns);
                 // this.jsonData1 = data
+                this.jsonData = []
                 this.jsonData.push(data)
                 console.log('Recruitment List:', this.jsonData1);
                 console.log('Recruitment List:', this.jsonData);
