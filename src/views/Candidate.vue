@@ -3,11 +3,15 @@
         <v-main>
             <v-container class="py-2 px-2" fluid>
                 <v-subheader class="d-flex justify-space-between align-center">
-        <h3>Dashboard</h3>
-        <v-btn class="rounded-lg" color="success" >
+                    <h3>Dashboard</h3>
+                    <!-- <v-btn class="rounded-lg" color="success" >
             Add candidate
-        </v-btn>
-      </v-subheader><br>
+        </v-btn> -->
+                    <div>
+                        <v-btn class="rounded-lg" color="success" @click="openLinkedInDialog">Go to LinkedIn Job
+                            Posting</v-btn>
+                    </div>
+                </v-subheader><br>
                 <v-data-table caption="test" v-model:sort-by="sortBy" :headers="headers" :items="items" class="elevation-1">
                     <template v-slot:item.status="{ item }">
                         <v-chip :color="getStatusColor(item.columns.status)" small>
@@ -98,7 +102,13 @@ export default {
                 default:
                     return 'grey';
             }
+        },
+
+        openLinkedInDialog() {
+            const linkedInJobPostingUrl = "https://www.linkedin.com/job-posting/?trk=flagship3_job_home";
+            window.open(linkedInJobPostingUrl, "LinkedInJobPosting", "width=800,height=600");
         }
+
     }
 };
 </script>
