@@ -5,7 +5,7 @@
                 <v-subheader class="d-flex justify-space-between align-center">
         <h3>Dashboard</h3>
         <v-btn class="rounded-lg" color="success" >
-            View candidate
+            Add candidate
         </v-btn>
       </v-subheader><br>
                 <v-data-table caption="test" v-model:sort-by="sortBy" :headers="headers" :items="items" class="elevation-1">
@@ -56,21 +56,7 @@ export default {
                 { title: 'interview_result', key: 'interview_result' },
                 { title: 'Name', key: 'actions', sortable: false }
             ],
-            jsonData: [],
-            jsonData1: [
-                {
-                    cn_id: "CN_001",
-                    japanese_proficiency_test: "N4",
-                    resume_link: "https://ap-northeast-1.console.aws.amazon.com/lambda/home?region=ap-northeast-1#/functions/postRecruitmentIistSheet?newFunction=true&tab=testing",
-                    sex: "male",
-                    status: "ongoin",
-                    kana: "日本語検定",
-                    date_of_birth: "1994/11/18",
-                    full_name: "Emal Isuranga",
-                    email: "emalisuranga@gamail.com",
-                }
-                // Your JSON data goes here
-            ]
+            jsonData: []
         };
     },
     methods: {
@@ -83,21 +69,7 @@ export default {
                 console.error('Error:', error);
             }
         },
-        // async fetchRecruitmentById(item) {
-        //     try {
-        //         const data = await fetchRecruitmentById(dialogItem);
-        //         this.dialogItem = data['body'];
-        //         // console.log('Recruitment List:', data['body']);
-        //     } catch (error) {
-        //         console.error('Error:', error);
-        //     }
-        // },
-        performAction(item) {
-            // Perform the action based on the selected item
-            console.log('Performing action for', item);
-        },
         async openDialog(item) {
-            console.log(item.columns);
             this.dialogItem = item.columns;
 
             // Check if dialogItem is defined and contains the necessary properties
@@ -106,8 +78,6 @@ export default {
                 // this.jsonData1 = data
                 this.jsonData = []
                 this.jsonData.push(data)
-                console.log('Recruitment List:', this.jsonData1);
-                console.log('Recruitment List:', this.jsonData);
             } catch (error) {
                 console.error('Error:', error);
             }

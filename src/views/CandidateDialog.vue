@@ -171,23 +171,6 @@ export default {
         // Fetch data from the API when the component is mounted
     },
     props: ['inputJson', 'dialogItem'],
-    // props: {
-    //     inputJson: {
-    //         type: Array,
-    //         required: true
-    //     },
-    //     dialogItem: {
-    //         type: Array,
-    //         required: true
-    //     },
-
-    // },
-    watch: {
-        item(newItem) {
-            console.log('dialogItem')
-            console.log('dialogItem:', newItem);
-        }
-    },
     methods: {
     },
 };
