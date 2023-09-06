@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
-    <Sidebar />
-    <Header />
+    <Sidebar :modelValue="drawerState" @update:modelValue="drawerState = $event"/>
+    <Header @open-drawer-clicked="toggleDrawer"/>
     <RouterView />
     <!-- <Dashboard /> -->
     
@@ -17,7 +17,10 @@
 
   const cards = ['Today', 'Yesterday']
 
-  const drawer = ref(null)
+  const drawerState = ref(true)
+  const toggleDrawer = () => {
+    drawerState.value = !drawerState.value;
+};
 </script>
 
 <script>

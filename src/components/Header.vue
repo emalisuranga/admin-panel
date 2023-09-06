@@ -6,7 +6,7 @@
         elevate-on-scroll
         scroll-target="#scrolling-techniques-7"
         >
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click="openDrawer"></v-app-bar-nav-icon>
 
             <v-toolbar-title>Title</v-toolbar-title>
 
@@ -20,7 +20,12 @@
 </template>
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    methods: {
+        openDrawer() {
+            this.$emit("open-drawer-clicked"); // Emit an event to notify the parent component
+        }
+    },
 }
 </script>
 <style lang="">
