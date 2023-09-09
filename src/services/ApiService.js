@@ -29,9 +29,28 @@ export const fetchRecruitmentById = async (dialogItem) => {
 };
 
 export const fetchRecruitmentList = async () => {
-  console.log("fetchRecruitmentList")
   try {
     const response = await axios.get(`${apiUrl}/recruitmentiistsheet`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching recruitment list:', error);
+    throw error;
+  }
+};
+
+export const postPlatFormData = async (formData) => {
+  try {
+    const response = await axios.post(`${apiUrl}/plat-form`, formData);
+    return response.data;
+  } catch (error) {
+    console.error('Error sending form data:', error);
+    throw error;
+  }
+};
+
+export const fetchPlatFormList = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/plat-form`);
     return response.data;
   } catch (error) {
     console.error('Error fetching recruitment list:', error);
