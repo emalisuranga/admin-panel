@@ -56,16 +56,11 @@ export default {
   name: "Sidebar",
   data: () => ({
     drawer: true,
-    links1: [
-      ['mdi-microsoft-windows', 'Dashboard'],
-      ['mdi-clipboard-list-outline', 'Facebook Job Seeker'],
-      ['mdi-delete', 'Business Process'],
-      ['mdi-alert-octagon', 'System Setting'],
-    ],
     links: [
       { path: '/', label: 'Dashboard', icon: 'mdi-microsoft-windows' },
-      { path: '/candidate', label: 'Facebook Job Seeker', icon: 'mdi-clipboard-list-outline' },
-      { path: '/', label: 'Business Process', icon: 'mdi-delete' },
+      { path: '/company', label: 'Company', icon: 'mdi-domain' },
+      { path: '/candidate', label: 'Job Seeker', icon: 'mdi-clipboard-list-outline' },
+      { path: '/', label: 'Job Process', icon: 'mdi-delete' },
       { path: '/', label: 'System Setting', icon: 'mdi-alert-octagon' },
       // Add more links as needed
     ]

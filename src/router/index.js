@@ -1,18 +1,24 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from '@/components/Dashboard.vue'
-import Candidate from '@/views/Candidate'
+import Candidate from '@/views/Candidate.vue'
+import Company from '../views/Company.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Dashboard',
     component: Dashboard
   },
   {
     path: '/candidate',
-    name: 'candidate',
+    name: 'Job Seeker',
     component: Candidate
+  },
+  {
+    path: '/company',
+    name: 'Company',
+    component: Company
   },
     // children: [
     //   {
